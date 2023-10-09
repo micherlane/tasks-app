@@ -19,7 +19,7 @@ export function TasksPage() {
   const dispatch = useTasksDispatch();
 
   useEffect(() => {
-    fetch('https://json-server-tasks.vercel.app/tasks')
+    fetch('https://task-backend-iohd604qu-micherlane.vercel.app/tasks')
       .then(response => response.json())
       .then(data => {
         dispatch!({ type: ActionType.LOADED, payload: { tasks: data } })
@@ -44,10 +44,12 @@ export function TasksPage() {
         "Content-Type": "application/json"
       }
     }
-    fetch('https://json-server-tasks.vercel.app/tasks', init)
+    fetch('https://task-backend-iohd604qu-micherlane.vercel.app/tasks', init)
       .then(response => {
         if (response.ok) {
           dispatch!({ type: ActionType.ADDED, payload: { task } })
+        } else {
+          console.log(response)
         }
       })
 
