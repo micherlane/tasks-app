@@ -37,8 +37,7 @@ export function TasksPage() {
 
   return (
     <>
-      
-      <button><Link to="/tasks/add">Add</Link></button>
+      <Link to="/tasks/add">Add</Link>  
       <TaskList tasks={tasks} onSave={handleSaveTask} onRemove={handleRemoveTask} />
     </>
   )

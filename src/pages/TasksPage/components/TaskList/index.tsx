@@ -9,7 +9,6 @@ interface TaskListProps {
 
 const TaskList = ({ tasks, onRemove, onSave }: TaskListProps) => {
 
-  console.log('Lista renderizada!')
 
   return (
     <>

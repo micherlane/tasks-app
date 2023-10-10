@@ -48,7 +48,6 @@ export function TaskListItem({ task, onRemove, onSave }: TaskListItemProps) {
     return isEditing ? 'Salvar' : 'Editar'
   }, [isEditing])
 
-  console.log('Item renderizado!')
 
   return (
     <li style={{ listStyle: "none" }}>
