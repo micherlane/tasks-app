@@ -4,7 +4,7 @@ import { HomePage } from './pages/HomePage'
 import { LoginPage } from './pages/LoginPage'
 import { AboutPage } from './pages/AboutPage'
 import { TasksPage } from './pages/TasksPage'
-import { AddTaskPage } from './pages/AddTaskPage'
+import { TaskAdd } from './pages/TasksPage/components/TaskAdd'
 import { NotFoundPage } from './pages/NotFoundPage'
 import { TaskDetail } from './pages/TasksPage/components/TaskDetail'
 
@@ -22,7 +22,7 @@ function App() {
         <Route path='/tasks'>
           <Route index element={<TasksPage/>}/>
           <Route path=':id' element={<TaskDetail/>}/>
-          <Route path='add' element={<AddTaskPage/>}/>
+          <Route path='add' element={<TaskAdd/>}/>
         </Route>
         <Route path='*' element={<NotFoundPage/>}/>
       </Routes>

@@ -1,8 +1,7 @@
 import { useEffect, useReducer } from 'react'
-import { ulid } from 'ulidx'
 import { ActionType, TaskReducer } from '../../reducers/task_reducer'
-import { TaskForm } from './components/TaskForm'
 import { TaskList } from './components/TaskList'
+import { Link} from 'react-router-dom';
 
 export interface Task {
   id: string
@@ -26,32 +25,6 @@ export function TasksPage() {
   }, [])
 
 
-  const handleAddTask = (text: string) => {
-
-    const task: Task = {
-      id: ulid(),
-      name: text,
-      description: '...',
-      created_at: new Date(),
-      done: false
-    };
-
-    const init = {
-      method: 'POST',
-      body: JSON.stringify(task),
-      headers: {
-        "Content-Type": "application/json"
-      }
-    }
-    fetch('http://localhost:3000/tasks', init)
-      .then(response => {
-        if (response.ok) {
-          dispatch({ type: ActionType.ADDED, payload: { task } })
-        }
-      })
-
-  }
-
   const handleRemoveTask = (task: Task) => {
     dispatch({ type: ActionType.REMOVED, payload: { id: task.id } })
   }
@@ -64,7 +37,8 @@ export function TasksPage() {
 
   return (
     <>
-      <TaskForm onAdd={handleAddTask} />
+      
+      <button><Link to="/tasks/add">Add</Link></button>
       <TaskList tasks={tasks} onSave={handleSaveTask} onRemove={handleRemoveTask} />
     </>
   )
