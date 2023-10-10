@@ -6,7 +6,7 @@ import { AboutPage } from './pages/AboutPage'
 import { TasksPage } from './pages/TasksPage'
 import { AddTaskPage } from './pages/AddTaskPage'
 import { NotFoundPage } from './pages/NotFoundPage'
-import { DetailTaskPage } from './pages/DetailTaskPage'
+import { TaskDetail } from './pages/TasksPage/components/TaskDetail'
 
 function App() {
 
@@ -21,7 +21,7 @@ function App() {
         <Route path='/about' element={<AboutPage/>}/>
         <Route path='/tasks'>
           <Route index element={<TasksPage/>}/>
-          <Route path=':id' element={<DetailTaskPage/>}/>
+          <Route path=':id' element={<TaskDetail/>}/>
         </Route>
         <Route path='/tasks/add' element={<AddTaskPage/>}/>
         <Route path='*' element={<NotFoundPage/>}/>
