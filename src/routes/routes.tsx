@@ -1,4 +1,4 @@
-import { useRoutes } from "react-router-dom";
+import { useRoutes, Outlet } from "react-router-dom";
 import { HomePage } from "../pages/HomePage";
 import { TasksPage } from "../pages/TasksPage";
 import { TaskDetail } from "../pages/TasksPage/components/TaskDetail";
@@ -9,18 +9,26 @@ import { NotFoundPage } from "../pages/NotFoundPage";
 
 export function Routes() {
     const element = useRoutes([
-        { path: "/", element: <HomePage/>},
-        { path:'/login', element: <LoginPage/>},
-        { path:'/about', element: <AboutPage/>},
-        { path: "/tasks",
-            element: <TasksPage/>,
+        { path: "/", element: <HomePage /> },
+        { path: '/login', element: <LoginPage /> },
+        { path: '/about', element: <AboutPage /> },
+        {
+            path: "/tasks",
+            element: <TasksPage />,
             children: [
                 { path: ':id', element: <TaskDetail /> },
-                {path: 'add', element: <TaskAdd/>}
+                { path: 'add', element: <TaskAdd /> },
+                { path: '*', element: <NotFoundPage /> },
             ]
         },
-        { path: '*', element: <NotFoundPage/>},
+        { path: '*', element: <NotFoundPage /> },
     ]);
 
-    return element;
+    return (
+        <>
+            {element}
+            <Outlet />
+        </>
+    )
+   
 }

@@ -17,7 +17,7 @@ function App() {
           <li><NavLink to='/about'>About</NavLink></li>
         </ul>
       </nav>
-  
+    
       <Routes/>
 
       <footer>
