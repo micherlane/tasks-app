@@ -1,7 +1,13 @@
+import { Footer } from "../../components/Footer";
+import { Header } from "../../components/Header";
+
 export function HomePage(){
     return (
         <main>
-            <h2>Bem-vindo(a) a HomePage!</h2>
+           <div>
+            <Header titulo="HomePage"/>
+            <Footer/>
+            </div>
         </main>
     )
 }

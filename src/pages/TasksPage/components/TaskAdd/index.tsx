@@ -2,6 +2,7 @@ import React, { useReducer, useRef } from 'react'
 import { Task } from '../..';
 import { ulid } from 'ulidx';
 import { ActionType, TaskReducer } from '../../../../reducers/task_reducer';
+import { Header } from '../../../../components/Header';
 
 
 export function TaskAdd() {
@@ -49,9 +50,12 @@ export function TaskAdd() {
 
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input type="text" ref={descriptionInputRef} placeholder="Descrição da Task" />
-      <input type="submit" value="Adicionar Tarefa" />
-    </form>
+    <div>
+      <Header titulo="Adicionar Task"/>
+      <form onSubmit={handleSubmit}>
+        <input type="text" ref={descriptionInputRef} placeholder="Descrição da Task" />
+        <input type="submit" value="Adicionar Tarefa" />
+      </form>
+    </div>
   )
 }

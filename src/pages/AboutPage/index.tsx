@@ -1,8 +1,12 @@
+import { Header } from "../../components/Header";
+
 export function AboutPage(){
     return (
-        <main>
-            <h2>Quem nós somos?</h2>
-            <h1>Não existe nós, existe apenas a equipe SoLaMente.</h1>
-        </main>
+        <>
+            <Header titulo="Quem nós somos? "/>
+            <main>
+                <h3>Não existe nós, existe apenas a equipe SoLaMente.</h3>
+            </main>
+        </>
     )
 }

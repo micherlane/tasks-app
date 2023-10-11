@@ -1,6 +1,7 @@
 import {useEffect, useState} from 'react';
 import {useParams} from 'react-router-dom';
 import { Task } from '../..';
+import { Header } from '../../../../components/Header';
 
 export function TaskDetail(){
     const {id} = useParams();
@@ -17,10 +18,11 @@ export function TaskDetail(){
        
     }, [])
     return (
-        
+        <>
+        <Header titulo='Detalhes Task'/>
         <main>
-            <h2>Bem-vindo(a) a DetailTaskPage!</h2>
-            <p>Nome: {task?.description} </p>
+            <p>Nome: {task?.name} </p>
         </main>
+        </>
     )
 }

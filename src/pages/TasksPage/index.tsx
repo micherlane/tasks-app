@@ -1,7 +1,6 @@
 import { useEffect, useReducer } from 'react'
 import { ActionType, TaskReducer } from '../../reducers/task_reducer'
 import { TaskList } from './components/TaskList'
-import { Link} from 'react-router-dom';
 
 export interface Task {
   id: string
@@ -36,8 +35,7 @@ export function TasksPage() {
   console.log('Page renderizada!')
 
   return (
-    <>
-      <Link to="/tasks/add">Add</Link>  
+    <> 
       <TaskList tasks={tasks} onSave={handleSaveTask} onRemove={handleRemoveTask} />
     </>
   )
