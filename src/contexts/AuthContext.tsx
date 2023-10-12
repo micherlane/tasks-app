@@ -1,6 +1,5 @@
-import React, { createContext, useContext, useMemo, useState } from "react";
+import React, { createContext, useContext, useMemo } from "react";
 import { useLocalStorage } from "../utils/useLocalStorage";
-import { useNavigate } from "react-router-dom";
 
 type User = {
   username: string
