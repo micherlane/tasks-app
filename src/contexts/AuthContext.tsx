@@ -1,4 +1,6 @@
 import React, { createContext, useContext, useMemo, useState } from "react";
+import { useLocalStorage } from "../utils/useLocalStorage";
+import { useNavigate } from "react-router-dom";
 
 type User = {
   username: string
@@ -21,7 +23,7 @@ interface AuthProviderProps {
 
 // AuthProvider encapsula o AuthContextProvider
 export const AuthProvider = ({ children }: AuthProviderProps) => {
-  const [user, setUser] = useState<User | null>(null)
+  const [user, setUser] = useLocalStorage({ keyName: "user", defaultValue: null});
 
   const signin = (user: User) => { setUser(user); }
 
